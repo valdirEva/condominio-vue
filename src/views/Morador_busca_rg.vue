@@ -10,7 +10,7 @@
         <div>
         <form class="form-inline md-form mr-auto mb-4" @submit.prevent="buscarRg">
         <div class="form-group">
-            <label for="rg">Buscar por rg</label>
+            <label for="rg"></label>
             <input type="text"  id="rg"
                 class="form-control" required
                 v-model="rg">
@@ -43,11 +43,9 @@
                 v-on:click="excluir(morador.numeroApartamento, morador.id)" > </button>
 
                 <button  type="button" class="glyphicon glyphicon-pencil mr-1"   v-on:click="editar(morador.rg)" style="color:blue">
-                    <span class="glyphicon glyphicon" aria-hidden="true"></span> </button><button  class=" glyphicon glyphicon-trash mr-1" type="submit" style="color:red"  
-            v-on:click="excluir(morador.rg, morador.id)" > </button>
+                    <span class="glyphicon glyphicon" aria-hidden="true"></span> </button>
 
-        <button  type="button" class="glyphicon glyphicon-pencil mr-1" style="color:blue">
-            <span class="glyphicon glyphicon" aria-hidden="true"></span> </button>
+        
         </tr>
         </tbody>
        
