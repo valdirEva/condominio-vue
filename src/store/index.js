@@ -8,7 +8,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     token: null,
-    usuario: null
+    usuario: null,
+    autorizacao:null
   },
   mutations: {
     setUsuario(state, usuario) {
@@ -16,6 +17,10 @@ export default new Vuex.Store({
       },
     setToken(state, token) {
       state.token = token;
+    
+    },
+    setAutorizacao(state, autorizacao){
+      state.autorizacao=autorizacao;
     },
     logout(state) {
       state.token = null;
@@ -33,6 +38,7 @@ export default new Vuex.Store({
         console.log(res);
         context.commit('setUsuario', usuario);
         context.commit('setToken', res.data.token);
+        context.commit('setAutorizacao',res.data.autorizacao);
         router.push('/');
       })
       .catch(error => console.log(error));

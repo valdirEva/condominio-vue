@@ -4,8 +4,9 @@ import router from "./router";
 import store from "./store";
 import axios from 'axios'
 axios.interceptors.request.use(config => {
-  if(store.state.token) {
-  config.headers.Authorization = store.state.token
+  if(store.state.token && store.state.autorizacao) {
+  config.headers.Authorization = store.state.token;
+  config.headers.autorizacao =store.state.autorizacao;
   }
   return config
   })

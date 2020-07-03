@@ -41,7 +41,7 @@
                 <td>{{ morador.dataNascimento}}</td>
                 <td>{{ morador.numeroApartamento }}</td>
                 
-                <button  class=" glyphicon glyphicon-trash mr-1" type="submit" style="color:red"  
+                <button v-if = "autorizacao === '[ROLE_ADMIN]'" class=" glyphicon glyphicon-trash mr-1" type="submit" style="color:red"  
                 v-on:click="excluir(morador.numeroApartamento, morador.id)" > </button>
 
                 <button  type="button" class="glyphicon glyphicon-pencil mr-1"   v-on:click="editar(morador.rg)" style="color:blue">
@@ -82,7 +82,8 @@ export default {
 },
 computed: {
     ...mapState([
-        'usuario'
+        'usuario',
+        'autorizacao'
     ])
 },
 methods: {
