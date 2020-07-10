@@ -25,6 +25,7 @@ export default new Vuex.Store({
     logout(state) {
       state.token = null;
       state.usuario = null;
+      state.autorizacao=null;
     }
   },
   actions: {

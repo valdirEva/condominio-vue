@@ -16,6 +16,13 @@ axios.interceptors.request.use(config => {
   if(error.response.status === 403) {
   alert('Não autorizado!')
   }
+  if(error.response.status === 404) {
+    alert('Nenhum registroencontrado!')
+    }
+  if(error.response.status === 400) {
+    alert('Requizição invalida')
+    }
+    
   else if (error.response.status === 401) {
   store.commit('logout')
   router.push('/login')
